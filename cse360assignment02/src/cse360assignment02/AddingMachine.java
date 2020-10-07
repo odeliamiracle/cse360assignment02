@@ -1,26 +1,37 @@
 package cse360assignment02;
 
-public class AddingMachine {
-  private int total;
-  
-  public AddingMachine () {
-    total = 0;  // not needed - included for clarity
-  }
-  
-  public int getTotal () {
-    return 0;
-  }
-  
-  public void add (int value) {
-  }
+public class AddingMachine{
+	int total;
+	StringBuffer history;
 
-  public void subtract (int value) {
-  }
+	public AddingMachine () {
+		total = 0;  // not needed - included for clarity
+		history = new StringBuffer("0");
+	}
 
-  public String toString () {
-    return "";
-  }
+	//The getTotal method should return the current total
+	public int getTotal () {
+		return total;
+	}
 
-  public void clear() {
-  }
+	//The add method should add the parameter to the total variable
+	public void add (int value) {
+		total = total + value;
+		System.out.print(" + " + value);
+	}
+
+	//The subtract method should subtract the parameter from the total variable
+	public void subtract (int value) {
+		total = total - value;
+		System.out.print(" - " + value);
+	}
+
+	public String toString () {
+		return history.toString();
+		// return "";
+	}
+
+	public void clear() {
+	}
+	
 }
